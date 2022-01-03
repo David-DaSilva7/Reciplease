@@ -67,7 +67,7 @@
                                         <rect key="frame" x="19" y="76" width="265" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -312,10 +312,15 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Reciplease" id="Zf8-gy-vWF">
                         <barButtonItem key="backBarButtonItem" title="Back" id="MnA-Q1-VVr"/>
-                        <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="bfl-EZ-hBL"/>
+                        <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="bfl-EZ-hBL">
+                            <connections>
+                                <action selector="pressedFavorite:" destination="SSj-tu-NcE" id="Qhz-4m-GgI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonFavorite" destination="bfl-EZ-hBL" id="zTH-ee-TqM"/>
                         <outlet property="listIngredients" destination="TEX-f1-pnh" id="TBM-LU-VCj"/>
                     </connections>
                 </viewController>

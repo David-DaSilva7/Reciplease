@@ -12,6 +12,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var textFieldIngredient: UITextField!
     @IBOutlet weak var listeIngredients: UITextView!
     
+    
+    var ingredients: [String] = []
+    
     @IBAction func clear(_ sender: Any) {
         ingredients.removeAll()
         listeIngredients.text.removeAll()
@@ -19,24 +22,21 @@ class SearchViewController: UIViewController {
     
     @IBAction func add(_ sender: Any) {
         if let ingredientsAdd = textFieldIngredient.text, !ingredientsAdd.isEmpty {
+            ingredients.append(ingredientsAdd.capitalizingFirstLetter())
+            textFieldIngredient.text?.removeAll()
             listeIngredients.text = self.get(self.ingredients)
         }
-        listeIngredients.text = self.get(self.ingredients)
+    }
+        
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-    }
-    
-    
-    var ingredients: [String] = ["tomato","cheese"]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        print(self.get(self.ingredients))
     }
     
     private func get(_ ingredients: [String]) -> String {
