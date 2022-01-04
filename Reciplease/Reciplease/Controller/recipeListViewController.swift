@@ -9,15 +9,15 @@ import UIKit
 
 class recipeListViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    
+    // MARK: - Properties
     let cellSpacingHeight: CGFloat = 5
     
+    // MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +25,8 @@ class recipeListViewController: UIViewController {
         tableView.reloadData()
     }
 }
+
+// MARK: - Extensions
 extension recipeListViewController: UITableViewDataSource {
     
     //        Nombres de sections
@@ -42,17 +44,9 @@ extension recipeListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell") as? RecipeTableViewCell else {
             return UITableViewCell()
         }
-//        let recipe = "Ca marche"
-//        cell?.textLabel?.text = "toy"
-//        cell?.detailTextLabel?.text = "story"
         cell.configure(image: "testPizza", title: "Pizza", subtitle: "Mozzarella and tomato", time: "5 min", like: "2k ❤︎")
-        
         return cell
     }
-//  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return cellSpacingHeight
-//    }
-    
 }
 
 

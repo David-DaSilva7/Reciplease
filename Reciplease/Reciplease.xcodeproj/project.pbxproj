@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C83FEAF727844BF700E063F5 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83FEAF627844BF700E063F5 /* Recipes.swift */; };
 		C8E348AC277479E90091D0DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AB277479E90091D0DE /* AppDelegate.swift */; };
 		C8E348AE277479E90091D0DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AD277479E90091D0DE /* SceneDelegate.swift */; };
 		C8E348B0277479E90091D0DE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AF277479E90091D0DE /* SearchViewController.swift */; };
@@ -18,9 +19,13 @@
 		C8E348CC277DE7DD0091D0DE /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */; };
 		C8E348CF277F031A0091D0DE /* Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348CE277F031A0091D0DE /* Capitalize.swift */; };
 		C8E348D1277F0EB80091D0DE /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */; };
+		C8E348D5278330140091D0DE /* EdamanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D4278330140091D0DE /* EdamanService.swift */; };
+		C8E348D7278330730091D0DE /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D6278330730091D0DE /* ServiceURL.swift */; };
+		C8E348DB27833D430091D0DE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348DA27833D430091D0DE /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C83FEAF627844BF700E063F5 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		C8E348A8277479E90091D0DE /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E348AB277479E90091D0DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E348AD277479E90091D0DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +39,9 @@
 		C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		C8E348CE277F031A0091D0DE /* Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitalize.swift; sourceTree = "<group>"; };
 		C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		C8E348D4278330140091D0DE /* EdamanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamanService.swift; sourceTree = "<group>"; };
+		C8E348D6278330730091D0DE /* ServiceURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceURL.swift; sourceTree = "<group>"; };
+		C8E348DA27833D430091D0DE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +79,6 @@
 				C8E348C127747B4F0091D0DE /* Model */,
 				C8E348C027747B480091D0DE /* View */,
 				C8E348BF27747B3D0091D0DE /* Controller */,
-				C8E348AF277479E90091D0DE /* SearchViewController.swift */,
-				C8E348C9277B706A0091D0DE /* recipeListViewController.swift */,
-				C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */,
 				C8E348B9277479ED0091D0DE /* Info.plist */,
 			);
 			path = Reciplease;
@@ -82,6 +87,9 @@
 		C8E348BF27747B3D0091D0DE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C8E348AF277479E90091D0DE /* SearchViewController.swift */,
+				C8E348C9277B706A0091D0DE /* recipeListViewController.swift */,
+				C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -89,8 +97,8 @@
 		C8E348C027747B480091D0DE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C8E348DC2783422E0091D0DE /* RecipeCell */,
 				C8E348B1277479E90091D0DE /* Main.storyboard */,
-				C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */,
 				C8E348B6277479ED0091D0DE /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -99,6 +107,8 @@
 		C8E348C127747B4F0091D0DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C8E348DD278342600091D0DE /* WebService */,
+				C83FEAF627844BF700E063F5 /* Recipes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +120,7 @@
 				C8E348B4277479ED0091D0DE /* Assets.xcassets */,
 				C8E348AB277479E90091D0DE /* AppDelegate.swift */,
 				C8E348AD277479E90091D0DE /* SceneDelegate.swift */,
+				C8E348DA27833D430091D0DE /* APIKey.swift */,
 			);
 			path = "Supporting files ";
 			sourceTree = "<group>";
@@ -120,6 +131,23 @@
 				C8E348CE277F031A0091D0DE /* Capitalize.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C8E348DC2783422E0091D0DE /* RecipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */,
+			);
+			path = RecipeCell;
+			sourceTree = "<group>";
+		};
+		C8E348DD278342600091D0DE /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				C8E348D4278330140091D0DE /* EdamanService.swift */,
+				C8E348D6278330730091D0DE /* ServiceURL.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +225,11 @@
 				C8E348CA277B706A0091D0DE /* recipeListViewController.swift in Sources */,
 				C8E348CC277DE7DD0091D0DE /* RecipeTableViewCell.swift in Sources */,
 				C8E348D1277F0EB80091D0DE /* RecipeDetailViewController.swift in Sources */,
+				C8E348D5278330140091D0DE /* EdamanService.swift in Sources */,
+				C8E348DB27833D430091D0DE /* APIKey.swift in Sources */,
 				C8E348B0277479E90091D0DE /* SearchViewController.swift in Sources */,
+				C83FEAF727844BF700E063F5 /* Recipes.swift in Sources */,
+				C8E348D7278330730091D0DE /* ServiceURL.swift in Sources */,
 				C8E348CF277F031A0091D0DE /* Capitalize.swift in Sources */,
 				C8E348AC277479E90091D0DE /* AppDelegate.swift in Sources */,
 				C8E348AE277479E90091D0DE /* SceneDelegate.swift in Sources */,
@@ -349,6 +381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57HD766KQ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -356,6 +389,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,6 +410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57HD766KQ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -383,6 +418,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

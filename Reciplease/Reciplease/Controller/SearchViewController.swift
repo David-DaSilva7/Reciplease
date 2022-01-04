@@ -7,14 +7,16 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController,  UITextFieldDelegate {
     
+    // MARK: - Properties
+    var ingredients: [String] = []
+    
+    // MARK: - Outlets
     @IBOutlet weak var textFieldIngredient: UITextField!
     @IBOutlet weak var listeIngredients: UITextView!
     
-    
-    var ingredients: [String] = []
-    
+    // MARK: - Actions
     @IBAction func clear(_ sender: Any) {
         ingredients.removeAll()
         listeIngredients.text.removeAll()
@@ -27,16 +29,18 @@ class SearchViewController: UIViewController {
             listeIngredients.text = self.get(self.ingredients)
         }
     }
-        
-
+    
+    @IBAction func dismissKeyborad(_ sender: Any) {
+        textFieldIngredient.resignFirstResponder()
+    }
+    
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
     }
     
     private func get(_ ingredients: [String]) -> String {
@@ -50,6 +54,11 @@ class SearchViewController: UIViewController {
         }
         
         return ingredientsList
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textFieldIngredient.resignFirstResponder()
+        return true
     }
     
 }

@@ -8,9 +8,8 @@
 import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
-
     
-
+    // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -18,6 +17,7 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var allView: UIView!
     @IBOutlet weak var picture: UIImageView!
     
+    // MARK: - Functions
     override func awakeFromNib() {
         super.awakeFromNib()
         addShadow()
