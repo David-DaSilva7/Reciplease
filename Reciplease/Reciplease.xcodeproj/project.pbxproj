@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96ED6EE5CEC5F4FCA388C649 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD189F8D6BF0FB86ED13636A /* Pods_Reciplease.framework */; };
+		C816FC8D2785968400B4B4A3 /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC8C2785968400B4B4A3 /* Hit.swift */; };
+		C816FC91278596A000B4B4A3 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC90278596A000B4B4A3 /* Ingredient.swift */; };
+		C816FC93278596B600B4B4A3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC92278596B600B4B4A3 /* Recipe.swift */; };
 		C83FEAF727844BF700E063F5 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83FEAF627844BF700E063F5 /* Recipes.swift */; };
+		C865A5282785F18F00FF98D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865A5272785F18F00FF98D0 /* Utils.swift */; };
 		C8E348AC277479E90091D0DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AB277479E90091D0DE /* AppDelegate.swift */; };
 		C8E348AE277479E90091D0DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AD277479E90091D0DE /* SceneDelegate.swift */; };
 		C8E348B0277479E90091D0DE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AF277479E90091D0DE /* SearchViewController.swift */; };
@@ -19,13 +24,20 @@
 		C8E348CC277DE7DD0091D0DE /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */; };
 		C8E348CF277F031A0091D0DE /* Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348CE277F031A0091D0DE /* Capitalize.swift */; };
 		C8E348D1277F0EB80091D0DE /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */; };
-		C8E348D5278330140091D0DE /* EdamanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D4278330140091D0DE /* EdamanService.swift */; };
+		C8E348D5278330140091D0DE /* EdamamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D4278330140091D0DE /* EdamamService.swift */; };
 		C8E348D7278330730091D0DE /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D6278330730091D0DE /* ServiceURL.swift */; };
 		C8E348DB27833D430091D0DE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348DA27833D430091D0DE /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BC80B127BBD1C507ABF1D1A /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
+		71EE8D601E0A1A78AD19EC96 /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
+		BD189F8D6BF0FB86ED13636A /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C816FC8C2785968400B4B4A3 /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
+		C816FC90278596A000B4B4A3 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		C816FC92278596B600B4B4A3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C83FEAF627844BF700E063F5 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
+		C865A5272785F18F00FF98D0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C8E348A8277479E90091D0DE /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E348AB277479E90091D0DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E348AD277479E90091D0DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +51,7 @@
 		C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		C8E348CE277F031A0091D0DE /* Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitalize.swift; sourceTree = "<group>"; };
 		C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
-		C8E348D4278330140091D0DE /* EdamanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamanService.swift; sourceTree = "<group>"; };
+		C8E348D4278330140091D0DE /* EdamamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamService.swift; sourceTree = "<group>"; };
 		C8E348D6278330730091D0DE /* ServiceURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceURL.swift; sourceTree = "<group>"; };
 		C8E348DA27833D430091D0DE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ED6EE5CEC5F4FCA388C649 /* Pods_Reciplease.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76C873934A1C0B53905F64C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71EE8D601E0A1A78AD19EC96 /* Pods-Reciplease.debug.xcconfig */,
+				2BC80B127BBD1C507ABF1D1A /* Pods-Reciplease.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		954420B0422446BB76807269 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD189F8D6BF0FB86ED13636A /* Pods_Reciplease.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C8E3489F277479E90091D0DE = {
 			isa = PBXGroup;
 			children = (
 				C8E348AA277479E90091D0DE /* Reciplease */,
 				C8E348A9277479E90091D0DE /* Products */,
+				76C873934A1C0B53905F64C5 /* Pods */,
+				954420B0422446BB76807269 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,8 +139,12 @@
 		C8E348C127747B4F0091D0DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C8E348DD278342600091D0DE /* WebService */,
 				C83FEAF627844BF700E063F5 /* Recipes.swift */,
+				C816FC8C2785968400B4B4A3 /* Hit.swift */,
+				C816FC92278596B600B4B4A3 /* Recipe.swift */,
+				C816FC90278596A000B4B4A3 /* Ingredient.swift */,
+				C8E348DD278342600091D0DE /* WebService */,
+				C865A5272785F18F00FF98D0 /* Utils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,7 +180,7 @@
 		C8E348DD278342600091D0DE /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				C8E348D4278330140091D0DE /* EdamanService.swift */,
+				C8E348D4278330140091D0DE /* EdamamService.swift */,
 				C8E348D6278330730091D0DE /* ServiceURL.swift */,
 			);
 			path = WebService;
@@ -157,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8E348BC277479ED0091D0DE /* Build configuration list for PBXNativeTarget "Reciplease" */;
 			buildPhases = (
+				557107A062912A71EBDFA31D /* [CP] Check Pods Manifest.lock */,
 				C8E348A4277479E90091D0DE /* Sources */,
 				C8E348A5277479E90091D0DE /* Frameworks */,
 				C8E348A6277479E90091D0DE /* Resources */,
+				06ECB6C6982BD60DF47BE312 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,18 +255,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06ECB6C6982BD60DF47BE312 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reciplease/Pods-Reciplease-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reciplease/Pods-Reciplease-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reciplease/Pods-Reciplease-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		557107A062912A71EBDFA31D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reciplease-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8E348A4277479E90091D0DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C8E348CA277B706A0091D0DE /* recipeListViewController.swift in Sources */,
+				C816FC91278596A000B4B4A3 /* Ingredient.swift in Sources */,
 				C8E348CC277DE7DD0091D0DE /* RecipeTableViewCell.swift in Sources */,
 				C8E348D1277F0EB80091D0DE /* RecipeDetailViewController.swift in Sources */,
-				C8E348D5278330140091D0DE /* EdamanService.swift in Sources */,
+				C8E348D5278330140091D0DE /* EdamamService.swift in Sources */,
+				C865A5282785F18F00FF98D0 /* Utils.swift in Sources */,
 				C8E348DB27833D430091D0DE /* APIKey.swift in Sources */,
+				C816FC8D2785968400B4B4A3 /* Hit.swift in Sources */,
 				C8E348B0277479E90091D0DE /* SearchViewController.swift in Sources */,
 				C83FEAF727844BF700E063F5 /* Recipes.swift in Sources */,
+				C816FC93278596B600B4B4A3 /* Recipe.swift in Sources */,
 				C8E348D7278330730091D0DE /* ServiceURL.swift in Sources */,
 				C8E348CF277F031A0091D0DE /* Capitalize.swift in Sources */,
 				C8E348AC277479E90091D0DE /* AppDelegate.swift in Sources */,
@@ -376,6 +460,7 @@
 		};
 		C8E348BD277479ED0091D0DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71EE8D601E0A1A78AD19EC96 /* Pods-Reciplease.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -405,6 +490,7 @@
 		};
 		C8E348BE277479ED0091D0DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC80B127BBD1C507ABF1D1A /* Pods-Reciplease.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

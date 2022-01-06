@@ -9,6 +9,7 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
     
+    var recipe: Recipe?
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -30,11 +31,47 @@ class RecipeTableViewCell: UITableViewCell {
         picture.layer.shadowOpacity = 2.0
     }
     
-    func configure(image: String, title: String, subtitle: String, time:String, like: String) {
-        picture.image = UIImage(named: image)
-        titleLabel.text = title
-        subtitleLabel.text = subtitle
-        timeLabel.text = time
-        likeLabel.text = like
+    func configure(recipe: Recipe) {
+        titleLabel.text = recipe.label
+        subtitleLabel.text? = ""
+        for ingredient in recipe.ingredientLines {
+            subtitleLabel.text? += "\(ingredient), "
+        }
+        likeLabel.text = "\(String(recipe.yield)) servings"
+        let labelConfigurationTuple = Utils.getTotalTimeStringSentence(for: recipe.totalTime)
+        timeLabel.text = labelConfigurationTuple.text
+        timeLabel.isHidden = labelConfigurationTuple.isHidden
     }
+    
+    /// Network call to load image for cells
+    func imageForCell(recipeUrl: String) {
+        EdamamService.shared.getImage(url: recipeUrl, callback: { [weak self] image in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                if let image = image {
+                    self.picture.image = image
+                }
+            }
+        })
+    }
+    
+//    func configure(image: String, title: String) {
+//        picture.image = UIImage(named: image)
+//        titleLabel.text = title
+//        subtitleLabel.text = subtitle
+//        timeLabel.text = time
+//        likeLabel.text = like
+//    }
+    
+//    func imageForCell(recipeUrl: String) {
+//        EdamamService.shared.getImage(url: recipeUrl, callback: { [weak self] image in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                if let image = image {
+//                    self.picture.image = image
+//                }
+//            }
+//        })
+//    }
+    
 }

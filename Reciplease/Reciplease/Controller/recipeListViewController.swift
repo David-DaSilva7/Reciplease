@@ -10,7 +10,9 @@ import UIKit
 class recipeListViewController: UIViewController {
     
     // MARK: - Properties
-    let cellSpacingHeight: CGFloat = 5
+    private var recipe: Recipe?
+    private var recipeImage: UIImage?
+    var hits: [Hit]?
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -44,7 +46,14 @@ extension recipeListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell") as? RecipeTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(image: "testPizza", title: "Pizza", subtitle: "Mozzarella and tomato", time: "5 min", like: "2k ❤︎")
+        
+        guard let hits = hits else {
+            return UITableViewCell()
+        }
+        
+        cell.imageForCell(recipeUrl: (hits[indexPath.row].recipe.image))
+        cell.configure(recipe: hits[indexPath.row].recipe)
+//        cell.configure(image: "\(recipe?.image)", title: "\(recipe?.label)")
         return cell
     }
 }
