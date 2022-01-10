@@ -9,7 +9,9 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
     var recipe: Recipe?
+    
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -19,17 +21,17 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var picture: UIImageView!
     
     // MARK: - Functions
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        addShadow()
-    }
-    
-    private func addShadow(){
-        picture.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-        picture.layer.shadowRadius = 2.0
-        picture.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        picture.layer.shadowOpacity = 2.0
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        addShadow()
+//    }
+//
+//    private func addShadow(){
+//        picture.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+//        picture.layer.shadowRadius = 2.0
+//        picture.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+//        picture.layer.shadowOpacity = 2.0
+//    }
     
     func configure(recipe: Recipe) {
         titleLabel.text = recipe.label
@@ -43,7 +45,6 @@ class RecipeTableViewCell: UITableViewCell {
         timeLabel.isHidden = labelConfigurationTuple.isHidden
     }
     
-    /// Network call to load image for cells
     func imageForCell(recipeUrl: String) {
         EdamamService.shared.getImage(url: recipeUrl, callback: { [weak self] image in
             guard let self = self else { return }
@@ -55,23 +56,13 @@ class RecipeTableViewCell: UITableViewCell {
         })
     }
     
-//    func configure(image: String, title: String) {
+//    func configure(image: String, title: String, subtitle: String) {
 //        picture.image = UIImage(named: image)
 //        titleLabel.text = title
 //        subtitleLabel.text = subtitle
 //        timeLabel.text = time
 //        likeLabel.text = like
 //    }
-    
-//    func imageForCell(recipeUrl: String) {
-//        EdamamService.shared.getImage(url: recipeUrl, callback: { [weak self] image in
-//            guard let self = self else { return }
-//            DispatchQueue.main.async {
-//                if let image = image {
-//                    self.picture.image = image
-//                }
-//            }
-//        })
-//    }
+
     
 }

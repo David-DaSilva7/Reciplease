@@ -18,12 +18,24 @@ class RecipesListViewController: UIViewController {
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+//        tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // passer le hits en fonction de l'index selectionné
+    }
+    
+    private func setupTableView() {
+        tableView.rowHeight = 200
+        tableView.register(UINib(nibName: "RecipeTableViewCellIdentifier", bundle: nil),
+                                  forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
+    }
+
 }
 
 // MARK: - Extensions
@@ -41,15 +53,18 @@ extension RecipesListViewController: UITableViewDataSource {
     
     //    Contenu dans la cellule
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell") as? RecipeTableViewCell else {
-            return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCellIdentifier",
+                                                            for: indexPath) as? RecipeTableViewCell else {
+                                                                return UITableViewCell()
         }
         
+        guard let hits = hits else {
+            return UITableViewCell()
+        }
+
+        cell.imageForCell(recipeUrl: (hits[indexPath.row].recipe.image))
+        cell.configure(recipe: hits[indexPath.row].recipe)
         
-//        cell.configure(image: "\(String(describing: recipe?.image))", title: "\(String(describing: recipe?.label))", time: "\(Int(recipe!.totalTime))°C" )
-        cell.configure(image: "\(recipe?.hits[0].recipe.image)",
-                       title: "\(recipe?.hits[0].recipe.label)",
-                       subtitle: "\(recipe?.hits[0].recipe.ingredients[0].text)" )
         return cell
     }
 }

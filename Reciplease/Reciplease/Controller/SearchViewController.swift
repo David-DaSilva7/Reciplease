@@ -11,22 +11,28 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
     
     // MARK: - Properties
     var ingredients: [String] = []
+    private var recipes: Recipes?
     
     // MARK: - Outlets
     @IBOutlet weak var textFieldIngredient: UITextField!
-    @IBOutlet weak var listeIngredients: UITextView!
+    @IBOutlet weak var listIngredients: UITextView!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Actions
+    
     @IBAction func clear(_ sender: Any) {
         ingredients.removeAll()
-        listeIngredients.text.removeAll()
+        listIngredients.text.removeAll()
+        self.searchButton.isEnabled = false
     }
     
     @IBAction func add(_ sender: Any) {
         if let ingredientsAdd = textFieldIngredient.text, !ingredientsAdd.isEmpty {
             ingredients.append(ingredientsAdd.capitalizingFirstLetter())
             textFieldIngredient.text?.removeAll()
-            listeIngredients.text = self.get(self.ingredients)
+            listIngredients.text = self.get(self.ingredients)
+            self.searchButton.isEnabled = true
         }
     }
     
@@ -34,14 +40,44 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
         textFieldIngredient.resignFirstResponder()
     }
     
-    // MARK: - Functions
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func searchRecipes(_ sender: Any) {
+        toogleActivityIndicator(activityIndicator: self.activityIndicator,
+                                button: self.searchButton,
+                                showActivityIndicator: true)
+        if !ingredients.isEmpty {
+            EdamamService.shared.getRecipes(for: self.ingredients, callback: { [weak self]  success, recipes in
+                guard let self = self else { return }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    if success, let recipes = recipes {
+                        if recipes.count > 0 {
+                            self.recipes = recipes
+                            self.performSegue(withIdentifier: "showResults", sender: self)
+                        } else {
+                            self.presentAlert(title: "Aucune recette",
+                                              message: "Désolé mais aucune recette n'a été trouvée avec votre liste d'ingrédients.",
+                                              buttonTitle: "OK")
+                        }
+                    } else {
+                        self.presentAlert(title: "Petit problème lors de la récupération des recettes",
+                                          message: "Veuillez réitérer votre recherche.",
+                                          buttonTitle: "OK")
+                    }
+                    toogleActivityIndicator(activityIndicator: self.activityIndicator, button: self.searchButton, showActivityIndicator: false)
+                }
+            })
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResults" {
+            if let recipesListVC = segue.destination as? RecipesListViewController {
+                recipesListVC.hits = recipes?.hits
+            }
+        }
     }
+    
+    // MARK: - Functions
     
     private func get(_ ingredients: [String]) -> String {
         var ingredientsList = ""
@@ -60,6 +96,8 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
         textFieldIngredient.resignFirstResponder()
         return true
     }
+    
+
     
 }
 

@@ -9,6 +9,9 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
     
+    // MARK: - Properties
+    private var recipe: Recipes?
+    
     // MARK: - Outlets
     @IBOutlet weak var listIngredients: UITextView!
     @IBOutlet weak var buttonFavorite: UIBarButtonItem!
@@ -37,8 +40,11 @@ class RecipeDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
     func ingredients() {
-        listIngredients.text = "- Salad \n- Tomatp \n- Egg"
+        listIngredients.text = "\(String(describing: recipe?.hits[0].recipe.ingredientLines))"
     }
+    
     
 }
