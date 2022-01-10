@@ -7,11 +7,9 @@
 
 import UIKit
 
-class recipeListViewController: UIViewController {
+class RecipesListViewController: UIViewController {
     
     // MARK: - Properties
-    private var recipe: Recipe?
-    private var recipeImage: UIImage?
     var hits: [Hit]?
     
     // MARK: - Outlets
@@ -29,7 +27,7 @@ class recipeListViewController: UIViewController {
 }
 
 // MARK: - Extensions
-extension recipeListViewController: UITableViewDataSource {
+extension RecipesListViewController: UITableViewDataSource {
     
     //        Nombres de sections
     func numberOfSections(in tableView : UITableView) -> Int {
@@ -47,13 +45,11 @@ extension recipeListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        guard let hits = hits else {
-            return UITableViewCell()
-        }
         
-        cell.imageForCell(recipeUrl: (hits[indexPath.row].recipe.image))
-        cell.configure(recipe: hits[indexPath.row].recipe)
-//        cell.configure(image: "\(recipe?.image)", title: "\(recipe?.label)")
+//        cell.configure(image: "\(String(describing: recipe?.image))", title: "\(String(describing: recipe?.label))", time: "\(Int(recipe!.totalTime))°C" )
+        cell.configure(image: "\(recipe?.hits[0].recipe.image)",
+                       title: "\(recipe?.hits[0].recipe.label)",
+                       subtitle: "\(recipe?.hits[0].recipe.ingredients[0].text)" )
         return cell
     }
 }
