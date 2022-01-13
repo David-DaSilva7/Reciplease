@@ -32,14 +32,14 @@ class RecipesListViewController: UIViewController {
     
     private func setupTableView() {
         tableView.rowHeight = 200
-        tableView.register(UINib(nibName: "RecipeTableViewCellIdentifier", bundle: nil),
+        tableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
     }
 
 }
 
 // MARK: - Extensions
-extension RecipesListViewController: UITableViewDataSource {
+extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate{
     
     //        Nombres de sections
     func numberOfSections(in tableView : UITableView) -> Int {
@@ -48,7 +48,7 @@ extension RecipesListViewController: UITableViewDataSource {
     
     //        Nombres de cellules
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return hits?.count ?? 0
     }
     
     //    Contenu dans la cellule

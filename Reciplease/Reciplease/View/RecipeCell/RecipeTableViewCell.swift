@@ -2,7 +2,7 @@
 //  RecipeTableViewCell.swift
 //  Reciplease
 //
-//  Created by David Da Silva on 30/12/2021.
+//  Created by David Da Silva on 10/01/2022.
 //
 
 import UIKit
@@ -17,8 +17,9 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
-    @IBOutlet weak var allView: UIView!
     @IBOutlet weak var picture: UIImageView!
+    
+
     
     // MARK: - Functions
 //    override func awakeFromNib() {

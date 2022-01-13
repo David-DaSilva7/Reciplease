@@ -11,6 +11,8 @@
 		C816FC8D2785968400B4B4A3 /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC8C2785968400B4B4A3 /* Hit.swift */; };
 		C816FC91278596A000B4B4A3 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC90278596A000B4B4A3 /* Ingredient.swift */; };
 		C816FC93278596B600B4B4A3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC92278596B600B4B4A3 /* Recipe.swift */; };
+		C83BEDC6278C8EED00370AC7 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83BEDC4278C8EED00370AC7 /* RecipeTableViewCell.swift */; };
+		C83BEDC7278C8EED00370AC7 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C83BEDC5278C8EED00370AC7 /* RecipeTableViewCell.xib */; };
 		C83FEAF727844BF700E063F5 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83FEAF627844BF700E063F5 /* Recipes.swift */; };
 		C865A5282785F18F00FF98D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865A5272785F18F00FF98D0 /* Utils.swift */; };
 		C865A52C278C32C600FF98D0 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865A52B278C32C600FF98D0 /* Indicator.swift */; };
@@ -23,7 +25,6 @@
 		C8E348B8277479ED0091D0DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E348B6277479ED0091D0DE /* LaunchScreen.storyboard */; };
 		C8E348C62774C0510091D0DE /* FrederickatheGreat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8E348C52774C0510091D0DE /* FrederickatheGreat-Regular.ttf */; };
 		C8E348CA277B706A0091D0DE /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348C9277B706A0091D0DE /* RecipesListViewController.swift */; };
-		C8E348CC277DE7DD0091D0DE /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */; };
 		C8E348CF277F031A0091D0DE /* Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348CE277F031A0091D0DE /* Capitalize.swift */; };
 		C8E348D1277F0EB80091D0DE /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */; };
 		C8E348D5278330140091D0DE /* EdamamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D4278330140091D0DE /* EdamamService.swift */; };
@@ -38,6 +39,8 @@
 		C816FC8C2785968400B4B4A3 /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
 		C816FC90278596A000B4B4A3 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		C816FC92278596B600B4B4A3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		C83BEDC4278C8EED00370AC7 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		C83BEDC5278C8EED00370AC7 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		C83FEAF627844BF700E063F5 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		C865A5272785F18F00FF98D0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C865A52B278C32C600FF98D0 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		C8E348B9277479ED0091D0DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8E348C52774C0510091D0DE /* FrederickatheGreat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrederickatheGreat-Regular.ttf"; sourceTree = "<group>"; };
 		C8E348C9277B706A0091D0DE /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
-		C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		C8E348CE277F031A0091D0DE /* Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitalize.swift; sourceTree = "<group>"; };
 		C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		C8E348D4278330140091D0DE /* EdamamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamService.swift; sourceTree = "<group>"; };
@@ -194,7 +196,8 @@
 		C8E348DC2783422E0091D0DE /* RecipeCell */ = {
 			isa = PBXGroup;
 			children = (
-				C8E348CB277DE7DD0091D0DE /* RecipeTableViewCell.swift */,
+				C83BEDC4278C8EED00370AC7 /* RecipeTableViewCell.swift */,
+				C83BEDC5278C8EED00370AC7 /* RecipeTableViewCell.xib */,
 			);
 			path = RecipeCell;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				C8E348C62774C0510091D0DE /* FrederickatheGreat-Regular.ttf in Resources */,
 				C8E348B5277479ED0091D0DE /* Assets.xcassets in Resources */,
 				C8E348B3277479E90091D0DE /* Main.storyboard in Resources */,
+				C83BEDC7278C8EED00370AC7 /* RecipeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +330,8 @@
 			files = (
 				C8E348CA277B706A0091D0DE /* RecipesListViewController.swift in Sources */,
 				C816FC91278596A000B4B4A3 /* Ingredient.swift in Sources */,
-				C8E348CC277DE7DD0091D0DE /* RecipeTableViewCell.swift in Sources */,
 				C865A52E278C362800FF98D0 /* Alert.swift in Sources */,
+				C83BEDC6278C8EED00370AC7 /* RecipeTableViewCell.swift in Sources */,
 				C8E348D1277F0EB80091D0DE /* RecipeDetailViewController.swift in Sources */,
 				C8E348D5278330140091D0DE /* EdamamService.swift in Sources */,
 				C865A5282785F18F00FF98D0 /* Utils.swift in Sources */,
