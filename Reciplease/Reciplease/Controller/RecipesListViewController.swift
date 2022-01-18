@@ -10,36 +10,49 @@ import UIKit
 class RecipesListViewController: UIViewController {
     
     // MARK: - Properties
+    private var selectedRecipe: Recipe?
+    private var selectedRecipeImage: UIImage?
     var hits: [Hit]?
+    private let segueIdentifier = "segueToRecipeDetail"
     
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var recipesTableView: UITableView!
     
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        
+        self.setupTableView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let recipeDetailVC = segue.destination as! RecipeDetailViewController
+            recipeDetailVC.recipe = selectedRecipe
+            recipeDetailVC.recipeImage = selectedRecipeImage
+        }
+    }
+    
+    deinit {
+        print("RecipesListViewController deinit called")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        tableView.reloadData()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // passer le hits en fonction de l'index selectionné
+        
+        self.recipesTableView.reloadData()
     }
     
     private func setupTableView() {
-        tableView.rowHeight = 200
-        tableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil),
+        self.recipesTableView.rowHeight = 200
+        self.recipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
     }
-
+    
 }
 
-// MARK: - Extensions
-extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate{
+// MARK: - TableView DataSource extension
+extension RecipesListViewController: UITableViewDataSource {
     
     //        Nombres de sections
     func numberOfSections(in tableView : UITableView) -> Int {
@@ -66,6 +79,18 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate{
         cell.configure(recipe: hits[indexPath.row].recipe)
         
         return cell
+    }
+    
+
+}
+
+// MARK: - TableView Delegate extension
+extension RecipesListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRecipe = hits?[indexPath.row].recipe
+        selectedRecipeImage = (tableView.cellForRow(at: indexPath) as! RecipeTableViewCell).picture.image
+        performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }
 

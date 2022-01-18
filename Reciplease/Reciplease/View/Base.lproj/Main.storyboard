@@ -206,6 +206,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="54B-Y0-453" id="iaj-RD-5Ct"/>
+                                    <outlet property="delegate" destination="54B-Y0-453" id="oJ5-3k-TCi"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBu-6f-6Pt">
@@ -225,7 +226,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="QiD-2L-Xy8"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="fZX-VQ-ksu" id="5CQ-fh-rGH"/>
+                        <outlet property="recipesTableView" destination="fZX-VQ-ksu" id="X2i-66-AMu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77r-Bh-z9S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

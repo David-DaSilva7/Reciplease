@@ -9,7 +9,7 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
     
-    // MARK: - Properties
+    // MARK: - Property
     var recipe: Recipe?
     
     // MARK: - Outlets
@@ -19,31 +19,17 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var picture: UIImageView!
     
-
-    
-    // MARK: - Functions
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        addShadow()
-//    }
-//
-//    private func addShadow(){
-//        picture.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-//        picture.layer.shadowRadius = 2.0
-//        picture.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-//        picture.layer.shadowOpacity = 2.0
-//    }
-    
+    // MARK: - Functions    
     func configure(recipe: Recipe) {
-        titleLabel.text = recipe.label
-        subtitleLabel.text? = ""
+        self.titleLabel.text = recipe.label
+        self.subtitleLabel.text? = ""
         for ingredient in recipe.ingredientLines {
-            subtitleLabel.text? += "\(ingredient), "
+            self.subtitleLabel.text? += "\(ingredient), "
         }
-        likeLabel.text = "\(String(recipe.yield)) servings"
+        self.likeLabel.text = "\(String(recipe.yield)) servings"
         let labelConfigurationTuple = Utils.getTotalTimeStringSentence(for: recipe.totalTime)
-        timeLabel.text = labelConfigurationTuple.text
-        timeLabel.isHidden = labelConfigurationTuple.isHidden
+        self.timeLabel.text = labelConfigurationTuple.text
+        self.timeLabel.isHidden = labelConfigurationTuple.isHidden
     }
     
     func imageForCell(recipeUrl: String) {
@@ -56,14 +42,4 @@ class RecipeTableViewCell: UITableViewCell {
             }
         })
     }
-    
-//    func configure(image: String, title: String, subtitle: String) {
-//        picture.image = UIImage(named: image)
-//        titleLabel.text = title
-//        subtitleLabel.text = subtitle
-//        timeLabel.text = time
-//        likeLabel.text = like
-//    }
-
-    
 }

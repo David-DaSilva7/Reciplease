@@ -10,7 +10,8 @@ import UIKit
 class RecipeDetailViewController: UIViewController {
     
     // MARK: - Properties
-    private var recipe: Recipes?
+    var recipe: Recipe?
+    var recipeImage: UIImage?
     
     // MARK: - Outlets
     @IBOutlet weak var listIngredients: UITextView!
@@ -36,15 +37,15 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        ingredients()
+//        ingredients()
         // Do any additional setup after loading the view.
     }
     
     
     
-    func ingredients() {
-        listIngredients.text = "\(String(describing: recipe?.hits[0].recipe.ingredientLines))"
-    }
+//    func ingredients() {
+//        listIngredients.text = "\(String(describing: recipe?.hits[0].recipe.ingredientLines))"
+//    }
     
     
 }

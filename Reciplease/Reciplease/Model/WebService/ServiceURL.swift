@@ -10,5 +10,5 @@ import Foundation
 class Edamam {
     
     // MARK: - Properties
-    static let endpoint = "https://api.edamam.com/api/recipes/v2"
+    static let endpoint = "https://api.edamam.com/search"
 }
