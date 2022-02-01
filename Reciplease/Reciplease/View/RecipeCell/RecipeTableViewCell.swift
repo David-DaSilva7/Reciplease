@@ -16,7 +16,7 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var servingsLabel: UILabel!
     @IBOutlet weak var picture: UIImageView!
     
     // MARK: - Functions    
@@ -26,7 +26,7 @@ class RecipeTableViewCell: UITableViewCell {
         for ingredient in recipe.ingredientLines {
             self.subtitleLabel.text? += "\(ingredient), "
         }
-        self.likeLabel.text = "\(String(recipe.yield)) servings"
+        self.servingsLabel.text = "\(String(recipe.yield)) servings"
         let labelConfigurationTuple = Utils.getTotalTimeStringSentence(for: recipe.totalTime)
         self.timeLabel.text = labelConfigurationTuple.text
         self.timeLabel.isHidden = labelConfigurationTuple.isHidden

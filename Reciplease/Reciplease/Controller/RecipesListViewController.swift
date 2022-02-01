@@ -39,7 +39,6 @@ class RecipesListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.recipesTableView.reloadData()
     }
     
@@ -48,11 +47,10 @@ class RecipesListViewController: UIViewController {
         self.recipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
     }
-    
 }
 
 // MARK: - TableView DataSource extension
-extension RecipesListViewController: UITableViewDataSource {
+extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     //        Nombres de sections
     func numberOfSections(in tableView : UITableView) -> Int {
@@ -80,18 +78,14 @@ extension RecipesListViewController: UITableViewDataSource {
         
         return cell
     }
-    
-
-}
-
-// MARK: - TableView Delegate extension
-extension RecipesListViewController: UITableViewDelegate {
-    
+    // MARK: - TableView Delegate extension
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRecipe = hits?[indexPath.row].recipe
         selectedRecipeImage = (tableView.cellForRow(at: indexPath) as! RecipeTableViewCell).picture.image
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }
+
+
 
 

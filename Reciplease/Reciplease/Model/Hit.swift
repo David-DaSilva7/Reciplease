@@ -9,5 +9,5 @@ import Foundation
 
 struct Hit: Codable {
     let recipe: Recipe
-    let bookmarked, bought: Bool
+//    let bookmarked, bought: Bool
 }

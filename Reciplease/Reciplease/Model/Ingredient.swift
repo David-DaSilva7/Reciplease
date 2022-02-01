@@ -9,6 +9,6 @@ import Foundation
 
 struct Ingredient: Codable {
     let text: String
-    let weight: Double
+//    let weight: Double
     let image: String?
 }
