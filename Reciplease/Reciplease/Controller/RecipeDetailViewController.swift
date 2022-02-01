@@ -15,7 +15,11 @@ class RecipeDetailViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var listIngredients: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonFavorite: UIBarButtonItem!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var servingsLabel: UILabel!
+    @IBOutlet weak var picture: UIImageView!
     
     // MARK: - Actions
     @IBAction func pressedFavorite(_ sender: UIBarButtonItem) {
@@ -29,7 +33,8 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @IBAction func webLink(_ sender: Any) {
-        if let url = NSURL(string: "https://www.apple.com/fr/") {
+        guard let stringUrl = recipe?.url else { return }
+        if let url = NSURL(string: stringUrl) {
             UIApplication.shared.openURL(url as URL)
         }
     }
@@ -37,15 +42,23 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-//        ingredients()
-        // Do any additional setup after loading the view.
+        prepareView()
     }
     
+    func prepareView() {
+        titleLabel.text = recipe?.label
+        let labelConfigurationTuple = Utils.getTotalTimeStringSentence(for: recipe!.totalTime)
+        timeLabel.text = labelConfigurationTuple.text
+        timeLabel.isHidden = labelConfigurationTuple.isHidden
+        servingsLabel.text = "\(String(recipe!.yield)) servings"
+        picture.image = recipeImage
+        configureTextView(recipe!.ingredientLines)
+    }
     
-    
-//    func ingredients() {
-//        listIngredients.text = "\(String(describing: recipe?.hits[0].recipe.ingredientLines))"
-//    }
-    
-    
+    func configureTextView(_ ingredientLines: [String]) {
+        listIngredients.text = ""
+        for ingredientLine in ingredientLines {
+            listIngredients.text! += "- " + ingredientLine.capitalizingFirstLetter() + "\n"
+        }
+    }
 }
