@@ -20,6 +20,12 @@
 		C865A5282785F18F00FF98D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865A5272785F18F00FF98D0 /* Utils.swift */; };
 		C865A52C278C32C600FF98D0 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865A52B278C32C600FF98D0 /* Indicator.swift */; };
 		C865A52E278C362800FF98D0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865A52D278C362800FF98D0 /* Alert.swift */; };
+		C8ADE22527A9777100D89070 /* RecipesFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE22427A9777100D89070 /* RecipesFavoritesViewController.swift */; };
+		C8ADE23527A9807000D89070 /* CoreDataTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE23427A9807000D89070 /* CoreDataTestCase.swift */; };
+		C8ADE23827A985A200D89070 /* EdamamRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = C8ADE23727A985A200D89070 /* EdamamRecipes.json */; };
+		C8ADE23A27A985D600D89070 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE23927A985D600D89070 /* FakeResponseData.swift */; };
+		C8ADE23C27A9861D00D89070 /* EdamamServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE23B27A9861D00D89070 /* EdamamServiceTestCase.swift */; };
+		C8ADE23E27A9863700D89070 /* UtilsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE23D27A9863700D89070 /* UtilsTestCase.swift */; };
 		C8E348AC277479E90091D0DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AB277479E90091D0DE /* AppDelegate.swift */; };
 		C8E348AE277479E90091D0DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AD277479E90091D0DE /* SceneDelegate.swift */; };
 		C8E348B0277479E90091D0DE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348AF277479E90091D0DE /* SearchViewController.swift */; };
@@ -34,6 +40,16 @@
 		C8E348D7278330730091D0DE /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348D6278330730091D0DE /* ServiceURL.swift */; };
 		C8E348DB27833D430091D0DE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E348DA27833D430091D0DE /* APIKey.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C8ADE22F27A97FA800D89070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8E348A0277479E90091D0DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8E348A7277479E90091D0DE;
+			remoteInfo = Reciplease;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2BC80B127BBD1C507ABF1D1A /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
@@ -51,6 +67,13 @@
 		C865A5272785F18F00FF98D0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C865A52B278C32C600FF98D0 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		C865A52D278C362800FF98D0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C8ADE22427A9777100D89070 /* RecipesFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesFavoritesViewController.swift; sourceTree = "<group>"; };
+		C8ADE22B27A97FA800D89070 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8ADE23427A9807000D89070 /* CoreDataTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestCase.swift; sourceTree = "<group>"; };
+		C8ADE23727A985A200D89070 /* EdamamRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EdamamRecipes.json; sourceTree = "<group>"; };
+		C8ADE23927A985D600D89070 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		C8ADE23B27A9861D00D89070 /* EdamamServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamServiceTestCase.swift; sourceTree = "<group>"; };
+		C8ADE23D27A9863700D89070 /* UtilsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTestCase.swift; sourceTree = "<group>"; };
 		C8E348A8277479E90091D0DE /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E348AB277479E90091D0DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E348AD277479E90091D0DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +92,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C8ADE22827A97FA800D89070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8E348A5277479E90091D0DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,10 +145,31 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		C8ADE22C27A97FA800D89070 /* RecipleaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				C8ADE23427A9807000D89070 /* CoreDataTestCase.swift */,
+				C8ADE23627A980D900D89070 /* EdamamService */,
+				C8ADE23D27A9863700D89070 /* UtilsTestCase.swift */,
+			);
+			path = RecipleaseTests;
+			sourceTree = "<group>";
+		};
+		C8ADE23627A980D900D89070 /* EdamamService */ = {
+			isa = PBXGroup;
+			children = (
+				C8ADE23727A985A200D89070 /* EdamamRecipes.json */,
+				C8ADE23927A985D600D89070 /* FakeResponseData.swift */,
+				C8ADE23B27A9861D00D89070 /* EdamamServiceTestCase.swift */,
+			);
+			path = EdamamService;
+			sourceTree = "<group>";
+		};
 		C8E3489F277479E90091D0DE = {
 			isa = PBXGroup;
 			children = (
 				C8E348AA277479E90091D0DE /* Reciplease */,
+				C8ADE22C27A97FA800D89070 /* RecipleaseTests */,
 				C8E348A9277479E90091D0DE /* Products */,
 				76C873934A1C0B53905F64C5 /* Pods */,
 				954420B0422446BB76807269 /* Frameworks */,
@@ -129,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				C8E348A8277479E90091D0DE /* Reciplease.app */,
+				C8ADE22B27A97FA800D89070 /* RecipleaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,6 +205,7 @@
 				C8E348AF277479E90091D0DE /* SearchViewController.swift */,
 				C8E348C9277B706A0091D0DE /* RecipesListViewController.swift */,
 				C8E348D0277F0EB80091D0DE /* RecipeDetailViewController.swift */,
+				C8ADE22427A9777100D89070 /* RecipesFavoritesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,6 +276,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C8ADE22A27A97FA800D89070 /* RecipleaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8ADE23127A97FA800D89070 /* Build configuration list for PBXNativeTarget "RecipleaseTests" */;
+			buildPhases = (
+				C8ADE22727A97FA800D89070 /* Sources */,
+				C8ADE22827A97FA800D89070 /* Frameworks */,
+				C8ADE22927A97FA800D89070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8ADE23027A97FA800D89070 /* PBXTargetDependency */,
+			);
+			name = RecipleaseTests;
+			productName = RecipleaseTests;
+			productReference = C8ADE22B27A97FA800D89070 /* RecipleaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C8E348A7277479E90091D0DE /* Reciplease */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8E348BC277479ED0091D0DE /* Build configuration list for PBXNativeTarget "Reciplease" */;
@@ -252,6 +323,10 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					C8ADE22A27A97FA800D89070 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = C8E348A7277479E90091D0DE;
+					};
 					C8E348A7277479E90091D0DE = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -271,11 +346,20 @@
 			projectRoot = "";
 			targets = (
 				C8E348A7277479E90091D0DE /* Reciplease */,
+				C8ADE22A27A97FA800D89070 /* RecipleaseTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C8ADE22927A97FA800D89070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8ADE23827A985A200D89070 /* EdamamRecipes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8E348A6277479E90091D0DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +417,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C8ADE22727A97FA800D89070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8ADE23527A9807000D89070 /* CoreDataTestCase.swift in Sources */,
+				C8ADE23C27A9861D00D89070 /* EdamamServiceTestCase.swift in Sources */,
+				C8ADE23A27A985D600D89070 /* FakeResponseData.swift in Sources */,
+				C8ADE23E27A9863700D89070 /* UtilsTestCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8E348A4277479E90091D0DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +442,7 @@
 				C8E348DB27833D430091D0DE /* APIKey.swift in Sources */,
 				C83BEDD32791D4F000370AC7 /* CoreDataStack.swift in Sources */,
 				C865A52C278C32C600FF98D0 /* Indicator.swift in Sources */,
+				C8ADE22527A9777100D89070 /* RecipesFavoritesViewController.swift in Sources */,
 				C816FC8D2785968400B4B4A3 /* Hit.swift in Sources */,
 				C8E348B0277479E90091D0DE /* SearchViewController.swift in Sources */,
 				C83FEAF727844BF700E063F5 /* Recipes.swift in Sources */,
@@ -361,6 +457,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C8ADE23027A97FA800D89070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8E348A7277479E90091D0DE /* Reciplease */;
+			targetProxy = C8ADE22F27A97FA800D89070 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C8E348B1277479E90091D0DE /* Main.storyboard */ = {
@@ -382,6 +486,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C8ADE23227A97FA800D89070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.dasilva.RecipleaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reciplease.app/Reciplease";
+			};
+			name = Debug;
+		};
+		C8ADE23327A97FA800D89070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.dasilva.RecipleaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reciplease.app/Reciplease";
+			};
+			name = Release;
+		};
 		C8E348BA277479ED0091D0DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -512,6 +660,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -542,6 +691,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -561,6 +711,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C8ADE23127A97FA800D89070 /* Build configuration list for PBXNativeTarget "RecipleaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8ADE23227A97FA800D89070 /* Debug */,
+				C8ADE23327A97FA800D89070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C8E348A3277479E90091D0DE /* Build configuration list for PBXProject "Reciplease" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
