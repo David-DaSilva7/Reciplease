@@ -33,10 +33,6 @@ class RecipesListViewController: UIViewController {
         }
     }
     
-    deinit {
-        print("RecipesListViewController deinit called")
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.recipesTableView.reloadData()

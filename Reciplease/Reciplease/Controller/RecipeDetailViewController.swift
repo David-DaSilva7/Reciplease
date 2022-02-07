@@ -23,20 +23,21 @@ class RecipeDetailViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func pressedFavorite(_ sender: UIBarButtonItem) {
-        if buttonFavorite.tintColor == UIColor.white {
-            buttonFavorite.tintColor = UIColor(red: 255/255.0, green: 230/255.0, blue: 0/255.0, alpha: 1)
-            
-        }
-        else if  buttonFavorite.tintColor == UIColor(red: 255/255.0, green: 230/255.0, blue: 0/255.0, alpha: 1) {
-            buttonFavorite.tintColor = UIColor.white
+        if let imageUrl = recipe?.image, let recipe = recipe {
+            if RecipeEntity.existBy(imageUrl) {
+                RecipeEntity.deleteBy(imageUrl)
+                buttonFavorite.tintColor = UIColor.white
+            } else {
+                RecipeEntity.addRecipeToFavorite(recipe)
+                buttonFavorite.tintColor = UIColor(red: 255/255.0, green: 230/255.0, blue: 0/255.0, alpha: 1)
+            }
         }
     }
     
     @IBAction func webLink(_ sender: Any) {
         guard let stringUrl = recipe?.url else { return }
-        if let url = NSURL(string: stringUrl) {
-            UIApplication.shared.openURL(url as URL)
-        }
+        guard let url = URL(string: stringUrl) else { return }
+        UIApplication.shared.open(url)
     }
     
     // MARK: - Functions
@@ -46,6 +47,8 @@ class RecipeDetailViewController: UIViewController {
     }
     
     func prepareView() {
+        favoriteButtonSetup()
+
         titleLabel.text = recipe?.label
         let labelConfigurationTuple = Utils.getTotalTimeStringSentence(for: recipe!.totalTime)
         timeLabel.text = labelConfigurationTuple.text
@@ -53,6 +56,14 @@ class RecipeDetailViewController: UIViewController {
         servingsLabel.text = "\(String(recipe!.yield)) servings"
         picture.image = recipeImage
         configureTextView(recipe!.ingredientLines)
+    }
+    
+    private func favoriteButtonSetup() {
+        if let imageUrl = recipe?.image, RecipeEntity.existBy(imageUrl) {
+            buttonFavorite.tintColor = UIColor(red: 255/255.0, green: 230/255.0, blue: 0/255.0, alpha: 1)
+        } else {
+            buttonFavorite.tintColor = UIColor.white
+        }
     }
     
     func configureTextView(_ ingredientLines: [String]) {

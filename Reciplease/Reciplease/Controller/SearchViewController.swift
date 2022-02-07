@@ -17,7 +17,6 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var textFieldIngredient: UITextField!
     @IBOutlet weak var listIngredients: UITextView!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Actions
     
@@ -41,9 +40,6 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
     }
     
     @IBAction func searchRecipes(_ sender: Any) {
-        toogleActivityIndicator(activityIndicator: self.activityIndicator,
-                                button: self.searchButton,
-                                showActivityIndicator: true)
         if !ingredients.isEmpty {
             EdamamService.shared.getRecipes(for: self.ingredients, callback: { [weak self]  success, recipes in
                 guard let self = self else { return }
@@ -63,7 +59,6 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
                                           message: "Veuillez réitérer votre recherche.",
                                           buttonTitle: "OK")
                     }
-                    toogleActivityIndicator(activityIndicator: self.activityIndicator, button: self.searchButton, showActivityIndicator: false)
                 }
             })
         }
