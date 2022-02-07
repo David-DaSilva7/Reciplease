@@ -6,50 +6,82 @@
 //
 
 import UIKit
+import CoreData
 
 class RecipesFavoritesViewController: UIViewController {
     
+    @IBOutlet weak var favoritesRecipesTableView: UITableView!
+    @IBOutlet weak var noRecipeFavoriteLabel: UILabel!
+    
+    //    // MARK: - Pivate properties
+    private var recipes = RecipeEntity.all()
+    private var selectedRecipe: Recipe?
+    private var selectedRecipeImage: UIImage?
+    private let segueIdentifier = "segueToRecipeDetail"
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        prepareView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let recipeDetailVC = segue.destination as! RecipeDetailViewController
+            recipeDetailVC.recipe = selectedRecipe
+            recipeDetailVC.recipeImage = selectedRecipeImage
+        }
+    }
+    
+    // MARK: - Private functions
+    private func prepareView() {
+        recipes = RecipeEntity.all()
+        favoritesRecipesTableView.reloadData()
+        if recipes.count > 0 {
+            noRecipeFavoriteLabel.isHidden = true
+            favoritesRecipesTableView.isHidden = false
+        } else {
+            noRecipeFavoriteLabel.isHidden = false
+            favoritesRecipesTableView.isHidden = true
+        }
+    }
+    
+    private func setupTableView() {
+        favoritesRecipesTableView.rowHeight = 200
+        favoritesRecipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil),
+                                  forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
+    }
 }
-    
-    // MARK: - TableView DataSource extension
-    extension RecipesFavoritesViewController: UITableViewDataSource, UITableViewDelegate {
-        
-        //        Nombres de sections
-        func numberOfSections(in tableView : UITableView) -> Int {
-            return 1
-        }
-        
-        //        Nombres de cellules
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return hits?.count ?? 0
-        }
-        
-        //    Contenu dans la cellule
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCellIdentifier",
-                                                                for: indexPath) as? RecipeTableViewCell else {
-                                                                    return UITableViewCell()
-            }
 
-
-            cell.imageForCell(recipeUrl: (recipes[indexPath.row].recipe.image))
-            cell.configure(recipe: recipes[indexPath.row].recipe)
-            
-            return cell
-        }
-        // MARK: - TableView Delegate extension
-        // Lorsqu'on appui sur une cellule
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            selectedRecipe = hits?[indexPath.row].recipe
-            selectedRecipeImage = (tableView.cellForRow(at: indexPath) as! RecipeTableViewCell).picture.image
-            performSegue(withIdentifier: segueIdentifier, sender: self)
-        }
+// MARK: - Extension allowing to congigure table view and cells details
+extension RecipesFavoritesViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        recipes.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let recipeCell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCellIdentifier",
+                                                             for: indexPath) as? RecipeTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        recipeCell.imageForCell(recipeUrl: (recipes[indexPath.row].image))
+        recipeCell.configure(recipe: recipes[indexPath.row])
+        
+        return recipeCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRecipe = recipes[indexPath.row]
+        selectedRecipeImage = (tableView.cellForRow(at: indexPath) as! RecipeTableViewCell).picture.image
+        performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+}
+
 
 
