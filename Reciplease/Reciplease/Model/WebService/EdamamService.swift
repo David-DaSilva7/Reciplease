@@ -29,6 +29,7 @@ class EdamamService {
         
         AF.request(Edamam.endpoint, method: .get, parameters: ingredientsParameter)
             .validate(contentType: ["application/json"])
+//            .responseDecodable { response in
             .responseJSON { response in
                 guard let data = response.data else {
                     return
