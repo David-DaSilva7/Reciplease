@@ -26,11 +26,11 @@ class EdamamService {
         let ingredientsParameter = ["app_key": APIKey.EdamamRecipeSearchAppKey,
                                     "app_id": APIKey.EdamamRecipeSearchAppID,
                                     "q": ingredients.joined(separator: ",")]
-        
         AF.request(Edamam.endpoint, method: .get, parameters: ingredientsParameter)
-            .validate(contentType: ["application/json"])
-//            .responseDecodable { response in
-            .responseJSON { response in
+//            .validate(contentType: ["application/json"])
+//            .validate(contentType: Recipes)
+            .responseDecodable(of: Recipes.self) { response in
+//            .responseJSON { response in
                 guard let data = response.data else {
                     return
                 }
