@@ -7,13 +7,13 @@
 
 import Foundation
 
+// MARK: - Structure
 struct Recipe: Codable {
     let label: String
     let image: String
     let url: String
     let yield: Int
     let ingredientLines: [String]
-    let ingredients: [Ingredient]
     let totalTime: Int
 }
 

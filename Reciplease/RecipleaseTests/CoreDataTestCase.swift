@@ -16,16 +16,12 @@ class CoreDataTestCase: XCTestCase {
                             url: "fakeUrl",
                             yield: 6,
                             ingredientLines: ["egg", "chicken"],
-                            ingredients: [Ingredient(text: "fake", weight: 2.0, image: "fakeImage")],
+//                            ingredients: [Ingredient(text: "fake", image: "fakeImage")],
                             totalTime: 60)
     
     // MARK: - Life cycle
     /// XCTestCase has two methods, setUp() and tearDown(), for setting up your test case before each run and cleaning up any test data afterwards. Since each test gets to start with a clean slate, these methods help make your tests isolated and repeatable.
     override func setUp() {
-        RecipeEntity.deleteBy(fakeRecipe.image)
-    }
-    
-    override func tearDown() {
         RecipeEntity.deleteBy(fakeRecipe.image)
     }
     

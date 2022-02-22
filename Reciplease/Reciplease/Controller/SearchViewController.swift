@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController,  UITextFieldDelegate {
     
     // MARK: - Properties
-    var ingredients: [String] = []
+    private var ingredients: [String] = []
     private var recipes: Recipes?
     
     // MARK: - Outlets
@@ -64,6 +64,8 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
         }
     }
     
+    // MARK: - Functions
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResults" {
             if let recipesListVC = segue.destination as? RecipesListViewController {
@@ -71,8 +73,6 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
             }
         }
     }
-    
-    // MARK: - Functions
     
     private func get(_ ingredients: [String]) -> String {
         var ingredientsList = ""
@@ -91,8 +91,5 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
         textFieldIngredient.resignFirstResponder()
         return true
     }
-    
-
-    
 }
 

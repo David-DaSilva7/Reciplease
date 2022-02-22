@@ -46,9 +46,8 @@ class RecipeDetailViewController: UIViewController {
         prepareView()
     }
     
-    func prepareView() {
+    private func prepareView() {
         favoriteButtonSetup()
-
         titleLabel.text = recipe?.label
         let labelConfigurationTuple = Utils.getTotalTimeStringSentence(for: recipe!.totalTime)
         timeLabel.text = labelConfigurationTuple.text
@@ -66,7 +65,7 @@ class RecipeDetailViewController: UIViewController {
         }
     }
     
-    func configureTextView(_ ingredientLines: [String]) {
+    private func configureTextView(_ ingredientLines: [String]) {
         listIngredients.text = ""
         for ingredientLine in ingredientLines {
             listIngredients.text! += "- " + ingredientLine.capitalizingFirstLetter() + "\n"

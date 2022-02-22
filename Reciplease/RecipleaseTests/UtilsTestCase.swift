@@ -9,7 +9,7 @@
 import XCTest
 
 class UtilsTestCase: XCTestCase {
-
+    
     // MARK: - Tests functions
     func testGivenRecipeTimeInMinutes_WhenSixtyMinutes_ThenRecipeTimeShouldReturnOneHourAndZeroMinute() {
         let recipeTime = Utils.minutesToHoursMinutes(minutes: 60)

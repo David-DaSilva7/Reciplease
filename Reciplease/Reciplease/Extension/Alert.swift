@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Extension alert
 extension UIViewController {
     func presentAlert(title: String, message: String, buttonTitle: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)

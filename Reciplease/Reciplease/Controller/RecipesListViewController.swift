@@ -41,34 +41,34 @@ class RecipesListViewController: UIViewController {
     private func setupTableView() {
         self.recipesTableView.rowHeight = 200
         self.recipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil),
-                                  forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
+                                       forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
     }
 }
 
 // MARK: - TableView DataSource extension
 extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate {
     
-    //        Nombres de sections
+    // Number of sections
     func numberOfSections(in tableView : UITableView) -> Int {
         return 1
     }
     
-    //        Nombres de cellules
+    // Cell numbers
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hits?.count ?? 0
     }
     
-    //    Contenu dans la cellule
+    // Content in the cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCellIdentifier",
-                                                            for: indexPath) as? RecipeTableViewCell else {
-                                                                return UITableViewCell()
+                                                       for: indexPath) as? RecipeTableViewCell else {
+            return UITableViewCell()
         }
         
         guard let hits = hits else {
             return UITableViewCell()
         }
-
+        
         cell.imageForCell(recipeUrl: (hits[indexPath.row].recipe.image))
         cell.configure(recipe: hits[indexPath.row].recipe)
         

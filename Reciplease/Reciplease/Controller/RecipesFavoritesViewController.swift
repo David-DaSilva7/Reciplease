@@ -10,16 +10,17 @@ import CoreData
 
 class RecipesFavoritesViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var favoritesRecipesTableView: UITableView!
     @IBOutlet weak var noRecipeFavoriteLabel: UILabel!
     
-    //    // MARK: - Pivate properties
+    // MARK: - Pivate properties
     private var recipes = RecipeEntity.all()
     private var selectedRecipe: Recipe?
     private var selectedRecipeImage: UIImage?
     private let segueIdentifier = "segueToRecipeDetail"
     
-    // MARK: - Life cycle
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -54,12 +55,14 @@ class RecipesFavoritesViewController: UIViewController {
     private func setupTableView() {
         favoritesRecipesTableView.rowHeight = 200
         favoritesRecipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil),
-                                  forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
+                                           forCellReuseIdentifier: "RecipeTableViewCellIdentifier")
     }
 }
 
-// MARK: - Extension allowing to congigure table view and cells details
-extension RecipesFavoritesViewController: UITableViewDataSource, UITableViewDelegate {
+// MARK: - TableView DataSource extension
+
+extension RecipesFavoritesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recipes.count
     }
@@ -69,12 +72,16 @@ extension RecipesFavoritesViewController: UITableViewDataSource, UITableViewDele
                                                              for: indexPath) as? RecipeTableViewCell else {
             return UITableViewCell()
         }
-        
         recipeCell.imageForCell(recipeUrl: (recipes[indexPath.row].image))
         recipeCell.configure(recipe: recipes[indexPath.row])
         
         return recipeCell
     }
+}
+
+// MARK: - TableView Delegate extension
+
+extension RecipesFavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRecipe = recipes[indexPath.row]

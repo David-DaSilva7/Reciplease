@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		96ED6EE5CEC5F4FCA388C649 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD189F8D6BF0FB86ED13636A /* Pods_Reciplease.framework */; };
 		C816FC8D2785968400B4B4A3 /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC8C2785968400B4B4A3 /* Hit.swift */; };
-		C816FC91278596A000B4B4A3 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC90278596A000B4B4A3 /* Ingredient.swift */; };
 		C816FC93278596B600B4B4A3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816FC92278596B600B4B4A3 /* Recipe.swift */; };
 		C83BEDC6278C8EED00370AC7 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83BEDC4278C8EED00370AC7 /* RecipeTableViewCell.swift */; };
 		C83BEDC7278C8EED00370AC7 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C83BEDC5278C8EED00370AC7 /* RecipeTableViewCell.xib */; };
@@ -56,7 +55,6 @@
 		71EE8D601E0A1A78AD19EC96 /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		BD189F8D6BF0FB86ED13636A /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C816FC8C2785968400B4B4A3 /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
-		C816FC90278596A000B4B4A3 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		C816FC92278596B600B4B4A3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C83BEDC4278C8EED00370AC7 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		C83BEDC5278C8EED00370AC7 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				C83FEAF627844BF700E063F5 /* Recipes.swift */,
 				C816FC8C2785968400B4B4A3 /* Hit.swift */,
 				C816FC92278596B600B4B4A3 /* Recipe.swift */,
-				C816FC90278596A000B4B4A3 /* Ingredient.swift */,
 				C8E348DD278342600091D0DE /* WebService */,
 				C865A5272785F18F00FF98D0 /* Utils.swift */,
 			);
@@ -426,7 +423,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E348CA277B706A0091D0DE /* RecipesListViewController.swift in Sources */,
-				C816FC91278596A000B4B4A3 /* Ingredient.swift in Sources */,
 				C865A52E278C362800FF98D0 /* Alert.swift in Sources */,
 				C83BEDC6278C8EED00370AC7 /* RecipeTableViewCell.swift in Sources */,
 				C8E348D1277F0EB80091D0DE /* RecipeDetailViewController.swift in Sources */,

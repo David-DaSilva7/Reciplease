@@ -7,7 +7,7 @@
 
 import Foundation
 
+// MARK: - Structure
 struct Hit: Codable {
     let recipe: Recipe
-//    let bookmarked, bought: Bool
 }

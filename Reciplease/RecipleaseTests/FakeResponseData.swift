@@ -9,7 +9,6 @@ import Foundation
 
 class FakeResponseData {
 
-    
     // MARK: - HTTP status code
     static let responseOK = HTTPURLResponse(
         url: URL(string: "https://openclassrooms.com")!,

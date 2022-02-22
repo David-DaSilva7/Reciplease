@@ -6,6 +6,7 @@
 //
 
 
+// MARK: - Structure for APIKey
 struct APIKey {
     static let EdamamRecipeSearchAppID = "29d863ec"
     static let EdamamRecipeSearchAppKey = "5e5a55dc99f129212f06f212577871eb"

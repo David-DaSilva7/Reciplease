@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Structure
 struct Recipes: Codable {
     let q: String
     let from, to: Int
