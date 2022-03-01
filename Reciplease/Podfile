@@ -9,4 +9,8 @@ inhibit_all_warnings!
 
 target 'Reciplease' do
   pod 'Alamofire'
+  
+  target 'RecipleaseTests' do
+    pod 'Mockingjay', '3.0.0-alpha.1'
+  end
 end

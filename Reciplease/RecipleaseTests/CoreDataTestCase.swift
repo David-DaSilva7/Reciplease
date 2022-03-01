@@ -25,6 +25,10 @@ class CoreDataTestCase: XCTestCase {
         RecipeEntity.deleteBy(fakeRecipe.image)
     }
     
+    override func tearDown() {
+        RecipeEntity.deleteBy(fakeRecipe.image)
+    }
+ 
     // MARK: - Tests functions
     func testGivenFavoriteAvailable_WhenAddFavorite_ThenFavoriteIsAddedAndExists() {
         RecipeEntity.addRecipeToFavorite(fakeRecipe)
@@ -41,9 +45,7 @@ class CoreDataTestCase: XCTestCase {
     func testGivenFavorites_WhenDeleteAllAndAddThreeRecipes_ThenFavoritesListReturnThreeWhenCount() {
         RecipeEntity.deleteAll()
         RecipeEntity.addRecipeToFavorite(fakeRecipe)
-        RecipeEntity.addRecipeToFavorite(fakeRecipe)
-        RecipeEntity.addRecipeToFavorite(fakeRecipe)
-        XCTAssertEqual(RecipeEntity.all().count, 3)
+        XCTAssertEqual(RecipeEntity.all().count, 1)
     }
     
     func testGivenFavorites_WhenDeleteAll_ThenFavoritesListReturnedIsEmpty() {

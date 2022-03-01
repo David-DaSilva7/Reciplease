@@ -5,6 +5,7 @@
 //  Created by David Da Silva on 03/01/2022.
 //
 
+import Foundation
 
 // MARK: - Structure for APIKey
 struct APIKey {
