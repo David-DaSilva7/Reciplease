@@ -18,7 +18,7 @@ class FakeResponseData {
     }
     
     static var correctImageData: Data {
-        let launchscreen_icon = #imageLiteral(resourceName: "launchscreen_icon.pdf")
+        let launchscreen_icon = #imageLiteral(resourceName: "LogoApp")
         return launchscreen_icon.pngData()!
     }
     

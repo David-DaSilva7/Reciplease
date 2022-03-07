@@ -1,5 +1,5 @@
 # minimum version supported
-platform :ios, '11.0'
+platform :ios, '15.0'
 
 # tells CocoaPods that you want to use frameworks instead of Static Libraries\
 use_frameworks!
