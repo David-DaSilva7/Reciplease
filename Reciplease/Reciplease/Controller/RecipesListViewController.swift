@@ -12,7 +12,7 @@ class RecipesListViewController: UIViewController {
     // MARK: - Properties
     private var selectedRecipe: Recipe?
     private var selectedRecipeImage: UIImage?
-    var hits: [Hit]?
+    var hits: [Hit] = []
     private let segueIdentifier = "segueToRecipeDetail"
     
     // MARK: - Outlets
@@ -55,17 +55,13 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     
     // Cell numbers
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hits?.count ?? 0
+        return hits.count
     }
     
     // Content in the cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCellIdentifier",
                                                        for: indexPath) as? RecipeTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        guard let hits = hits else {
             return UITableViewCell()
         }
         
@@ -76,7 +72,7 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     // MARK: - TableView Delegate extension
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedRecipe = hits?[indexPath.row].recipe
+        selectedRecipe = hits[indexPath.row].recipe
         selectedRecipeImage = (tableView.cellForRow(at: indexPath) as! RecipeTableViewCell).picture.image
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }

@@ -14,12 +14,6 @@ class EdamamService {
     // MARK: - Properties
     static let shared = EdamamService()
     private init() {}
-    private var task: URLSessionDataTask?
-    
-    private var edamamSession = URLSession(configuration: .default)
-    init(edamamSession: URLSession) {
-        self.edamamSession = edamamSession
-    }
     
     // MARK: - Function
     func getRecipes(for ingredients: [String], callback: @escaping (Bool, Recipes?) -> Void) {
