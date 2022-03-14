@@ -17,6 +17,7 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var textFieldIngredient: UITextField!
     @IBOutlet weak var listIngredients: UITextView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Actions
     
@@ -40,15 +41,16 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
     }
     
     @IBAction func searchRecipes(_ sender: Any) {
+        toogleActivityIndicator(activityIndicator: self.activityIndicator, button: self.searchButton, showActivityIndicator: true)
         if !ingredients.isEmpty {
             EdamamService.shared.getRecipes(for: self.ingredients, callback: { [weak self]  success, recipes in
                 guard let self = self else { return }
-                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     if success, let recipes = recipes {
                         if recipes.count > 0 {
                             self.recipes = recipes
                             self.performSegue(withIdentifier: "showResults", sender: self)
+                            toogleActivityIndicator(activityIndicator: self.activityIndicator, button: self.searchButton, showActivityIndicator: false)
                         } else {
                             self.presentAlert(title: "Aucune recette",
                                               message: "Désolé mais aucune recette n'a été trouvée avec votre liste d'ingrédients.",
@@ -66,10 +68,15 @@ class SearchViewController: UIViewController,  UITextFieldDelegate {
     
     // MARK: - Functions
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        toogleActivityIndicator(activityIndicator: self.activityIndicator, button: self.searchButton, showActivityIndicator: false)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResults" {
             if let recipesListVC = segue.destination as? RecipesListViewController {
-                recipesListVC.hits = recipes?.hits
+                recipesListVC.hits = recipes?.hits ?? []
             }
         }
     }
